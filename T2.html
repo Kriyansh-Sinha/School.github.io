@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  
+   
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+  
+  
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style type="text/css" media="">
+  html {
+   background: black;
+  }
+  
+  /*Brightcards---------*/
+  *
+{ 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: consolas;
+}
+
+#bg{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  background: linear-gradient(to bottom, #120, #012);
+  background-size: 100vw, auto;
+}
+.container
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 40px 0;
+}
+
+.container .box
+{
+  position: relative;
+  width: 320px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 30px;
+  transition: 0.5s;
+}
+
+.container .box::before
+{
+  content:' ';
+  position: absolute;
+  top: 0;
+  left: 50px;
+  width: 50%;
+  height: 100%;
+  text-decoration: none;
+  background: #fff;
+  border-radius: 8px;
+  transform: skewX(15deg);
+  transition: 0.5s;
+}
+
+.container .box::after
+{
+  content:'';
+  position: absolute;
+  top: 0;
+  left: 50;
+  width: 50%;
+  height: 100%;
+  background: #fff;
+  border-radius: 8px;
+  transform: skewX(15deg);
+  transition: 0.5s;
+  filter: blur(50px);
+}
+
+.container .box:hover:before,
+.container .box:hover:after
+{
+  transform: skewX(0deg);
+  left: 20px;
+  width: calc(100% - 90px);
+  
+}
+
+.container .box:nth-child(1):before,
+.container .box:nth-child(1):after
+{
+  background: linear-gradient(315deg, #dd9a00, #df0038)
+}
+
+.container .box:nth-child(2):before,
+.container .box:nth-child(2):after
+{
+  background: linear-gradient(315deg, #03a9f4, #ff0058)
+}
+
+.container .box:nth-child(3):before,
+.container .box:nth-child(3):after
+{
+  background: linear-gradient(315deg, #1dbd03, #00b0bb)
+}
+
+.container .box:nth-child(4):before,
+.container .box:nth-child(4):after
+{
+  background: linear-gradient(315deg, purple, cyan )
+}
+
+.container .box:nth-child(5):before,
+.container .box:nth-child(5):after
+{
+  background: linear-gradient(315deg, crimson, green)
+}
+
+
+.container .box span
+{
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  pointer-events: none;
+}
+.box {
+ animation: animations_al 1s linear ;
+}
+
+.container .box span::before
+{
+  content:'';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transition: 0.1s;  
+  animation: animate 2s ease-in-out infinite;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08)
+}
+
+.container .box:hover span::before
+{
+  top: -50px;
+  left: 50px;
+  width: 100px;
+  height: 100px;
+  opacity: 1;
+}
+
+.container .box span::after
+{
+  content:'';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transition: 0.5s;
+  animation: animate 2s ease-in-out infinite;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  animation-delay: -1s;
+}
+
+.container .box:hover span:after
+{
+  bottom: -50px;
+  right: 50px;
+  width: 100px;
+  height: 100px;
+  opacity: 1;
+}
+@keyframes animations_a {
+0% {
+ opacity: 0;
+ transform: translateY(1vh);
+}
+100% {
+ opacity: 1;
+ transform: translateY(-1vh);
+}
+ 
+ 
+}
+@keyframes animate
+{
+  0%, 100%
+  {
+    transform: translateY(10px);
+  }
+  
+  50%
+  {
+    transform: translate(-10px);
+  }
+}
+
+.container .box .content
+{
+  position: relative;
+  left: 0;
+  padding: 20px 40px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  z-index: 1;
+  transform: 0.5s;
+  color: #fff;
+}
+
+.container .box:hover .content
+{
+  left: -25px;
+  padding: 60px 40px;
+}
+
+.container .box .content h2
+{
+  font-size: 2em;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.container .box .content p
+{
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  line-height: 1.4em;
+}
+
+.container .box .content a
+{
+  display: inline-block;
+  font-size: 1.1em;
+  color: #111;
+  background: #fff;
+  padding: 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+.container .box .content a:hover
+{
+  background: #ffcf4d;
+  border: 1px solid rgba(255, 0, 88, 0.4);
+  box-shadow: 0 1px 15px rgba(1, 1, 1, 0.2);
+}
+  
+  
+ </style>
+ <style>
+  
+   
+   #header {
+    background: linear-gradient(to bottom, #eee, #bbb); ;
+    height: 10vh;
+    display: flex;
+    font-size: 3vw;
+    font-weight: 600;
+    justify-content: space-between;
+    flex-direction: rows;
+   }
+  
+   .logo {
+    border: 1px solid Transparent;
+    height: inherit;
+    width: 0;
+    border-radius: 50%;
+   }
+   .logos {
+    border: 1px solid Transparent;
+    height: inherit;
+    display:flex;
+    flex-direction: rows;
+    width: auto;
+   
+   }
+   .school_name {
+    background: /*url('https://balbhartischool.edu.in/uploads/school_content/logo/1690288745-90911871164bfc269d2ce2!1689748712-80085122564b784e82fc08!logo-img.png')*/ Transparent ;
+    
+    height: inherit;
+   }
+   .tabs {
+    /*display: flex;
+    flex-direction: rows;*/
+    overflow: auto;
+    
+    font-weight: 900;
+    color: white;
+    
+   
+   
+    display: flex;
+    flex-direction: rows;
+    /*justify-content: center;*/
+    align-items: center ;
+   /* border: 1px solid Transparent;*/
+    height: inherit;
+    width: auto;
+   }
+   .tabs div {
+    border: solid 1px #202;
+    border-radius: 4vw;
+    padding: 1vh 1vw;
+    color: #202;
+    margin: 1vw;
+    
+   }
+   .tabs div:nth-child(1) {
+    color: white;
+    background: #202;
+   }
+   #main1  {
+    /*border: 2px solid  ;*/
+    display: grid;
+    height: 400px;
+    background: linear-gradient(to bottom, hsl(163, 88.1%, 19.8%), hsl(173, 80.4%, 40%), hsl(142, 69.2%, 68%))/*url('img4.jpeg')*/;
+    background-size: 100vw 100vh;
+    
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+   /*justify-items: center;*/
+   overflow: hidden;
+    /*align-items: center;*/
+   }
+   
+   .c1, .c2 {
+   
+   display: grid;
+  
+    justify-self: center;
+  
+    overflow: hidden ;
+    margin-top:30px;
+    border-radius: 0% 50% 50% 50%;
+    box-shadow: -5px 0px 20px 4px black;
+    
+    height: 300px;
+    width: 300px;
+    background: #faa;
+    background-size: auto 50vh;
+    background-repeat: no-repeat;
+    overflow : hidden;
+   /* transform: translate{;*/
+   }
+   .c2 {
+    align-content: center;
+    text-align: center;
+    background: #eee;
+    font-weight: 900;
+    height: 100px;
+    width: 100px;
+    overflow: hidden ;
+    border-radius: 50%;
+    transform: translate(100px, -120px);
+   }
+   
+   .img1 {
+    
+    height: 300px;
+    width : auto;
+   }
+   .img2 {
+    transform: translate(40vh,-20vh);
+    height: 20vh;
+   }
+   #main2 {
+    animation: animations_al 1s linear ;
+    border: none;
+    height: 100vh;
+    width: 100vw;
+   }
+   .bar {
+    z-index: 3;
+    height: 5px;
+    width: 0;
+    position: sticky ;
+    top: 0px;
+    justify-self: center;
+    background: cyan;
+   animation: baar 1s linear infinite ;
+    animation-delay: scroll(y) ;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+   }
+   
+   @keyframes baar{
+    to {
+     width: 100vw;
+     background: purple;
+    }
+   }
+   #main3 {
+    animation: animations_al 1s linear ;
+    background: #012;/*
+    height: 200vh ;*/
+    width: 100vw;
+    padding-bottom: 20vh;
+    display: flex;
+    flex-direction: column;
+    
+   }
+   #main3 div {
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    color: white;
+     : 2px solid  ;
+    
+   }
+   #main3 div p {
+    filter: drop-shadow(0px 0px 600px white);
+    font-size: 3vw;
+    margin-left: 5vw;
+    width: 50vw;
+  /*  box-shadow: 5px 5px 100px #002aee7a inset;
+   */ padding: 2vw;
+   /*border: solid 2px blue;*/
+   }
+   @media(min-width : 600px) {
+    .bar {
+     height: 20px;
+    }
+   .box {
+    animation: animations_al 1.5s linear ;
+   }
+   #main3 div p {
+    font-size: 4.2vw;
+   }
+   #main1 {
+    animation: animations_al 1s linear ;
+    height: 600px;
+   } 
+   .c2 {
+    font-size: 2.2vw;
+    height: calc(500px/3);
+    width: calc(500px/3);
+    transform: translate(150px , -170px);
+   }
+    .img1 {
+     height: 500px;
+    }
+    .tabs div {
+     font-size: 1vw;
+     border-radius: 3vw;
+    }
+    .c1 {
+     height: 500px;
+     width: 500px;
+    }
+   }
+   strong {
+    /*filter: drop-shadow(1px 1px 20px #012);*/
+    font-size: 4vh;
+    color: #27ca09;
+    margin-bottom: 1vh;
+   }
+   #main3 div div img {
+    
+    height: 15vh;
+    margin: 5vh 5vh 5vh 0;
+     : 3px solid white;
+   }
+   
+   #foot {
+    height: 100vh;
+    background: #eee;
+    width: 100vw;
+   }
+
+@keyframes p {
+ 0% {
+  content: "ANNUAL DAY!!";
+  
+ }
+ 50% {
+  content: "ANNUAL SPORTS DAY!! ";
+ }
+ 55% {
+  content: "SPIC MACAY. ";
+ }
+ 95% {
+  content: "TOURS!! ";
+ }
+ 
+}
+.c2 p:before{
+ content: "";
+ animation: p 18s linear infinite;
+}
+  
+  
+ #main4 {
+  animation: animations_al 1s linear ;
+  height: auto;
+  width: 100vw;
+  background: linear-gradient(to bottom, #012,#202,#303 );
+  border: none;
+ }
+  </style>
+  
+  
+  <style type="text/css" media="">
+   * { margin: 0;
+    padding: 0;
+     }
+ 
+.footer-widget p {
+    margin-bottom: 27px;
+}
+#main4 p {
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+  color:white;
+    line-height: 28px;
+}
+
+   .animate-border {
+  position: relative;
+  display: block;
+  width: 115px;
+  height: 3px;
+  background: lime; }
+
+.animate-border:after {
+  position: absolute;
+  content: "";
+  width: 35px;
+  height: 3px;
+  left: 0;
+  bottom: 0;
+  border-left: 10px solid #fff;
+  border-right: 10px solid #fff;
+  -webkit-animation: animborder 2s linear infinite;
+  animation: animborder 2s linear infinite; }
+
+@-webkit-keyframes animborder {
+  0% {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px); }
+  100% {
+    -webkit-transform: translateX(113px);
+    transform: translateX(113px); } }
+
+@keyframes animborder {
+  0% {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px); }
+  100% {
+    -webkit-transform: translateX(113px);
+    transform: translateX(113px); } }
+
+
+.dk-footer {
+  padding: 75px 0 0;
+  font-size: 3vw;
+  background-color: transparent ;
+  position: relative;
+  z-index: 2; }
+  .dk-footer .contact-us {
+    margin-top: 0;
+    margin-bottom: 30px;
+    padding-left: 80px; }
+    .dk-footer .contact-us .contact-info {
+      margin-left: 50px; }
+    .dk-footer .contact-us.contact-us-last {
+      margin-left: -80px; }
+  .dk-footer .contact-icon i {
+    font-size: 24px;
+    top: -15px;
+    position: relative;
+    color:#007bff; }
+
+.dk-footer-box-info {
+  position: absolute;
+  top: -112px;
+  width: 100vw;
+  background: #202020;
+  padding: 40px;
+  z-index: 2; }
+  .dk-footer-box-info .footer-social-link h3 {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 25px; }
+  .dk-footer-box-info .footer-social-link ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; }
+  .dk-footer-box-info .footer-social-link li {
+    display: inline-block; }
+    .footer-social-link a {
+     text-decoration: none;
+    }
+  .dk-footer-box-info .footer-social-link a i {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    background: #000;
+    margin-right: 5px;
+    color: #fff; }
+    
+    .dk-footer-box-info .footer-social-link a i.fa-facebook {
+      background-color: #3B5998; }
+    .dk-footer-box-info .footer-social-link a i.fa-twitter {
+      background-color: #55ACEE; }
+    .dk-footer-box-info .footer-social-link a i.fa-google-plus {
+      background-color: #DD4B39; }
+    .dk-footer-box-info .footer-social-link a i.fa-linkedin {
+      background-color: #0976B4; }
+    .dk-footer-box-info .footer-social-link a i.fa-instagram {
+      background-color: #B7242A; }
+
+.footer-awarad {
+  margin-top: 285px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 100%;
+  -moz-box-flex: 0;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  .footer-awarad p {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    margin-left: 20px;
+    padding-top: 15px; }
+
+.footer-info-text {
+  margin: 26px 10px 32px; }
+
+.footer-left-widget {
+  padding-left: 80px; }
+
+.footer-widget .section-heading {
+ margin-left: 20px;
+  margin-bottom: 35px; }
+
+.footer-widget h3 {
+  font-size: 24px;
+  color: #fff;
+  position: relative;
+  margin-bottom: 15px;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content; }
+
+.footer-widget ul {
+  width: 50%;
+  float: left;
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+.footer-widget li {
+  margin-bottom: 18px; }
+
+.footer-widget p {
+  margin-bottom: 27px; }
+
+.footer-widget a {
+  color: #878787;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; }
+  .footer-widget a:hover {
+    color: #007bff; }
+
+.footer-widget:after {
+  content: "";
+  display: block;
+  clear: both; }
+
+.dk-footer-form {
+  position: relative; }
+  .dk-footer-form input[type=email] {
+    padding: 14px 28px;
+    border-radius: 50px;
+    background: #2E2E2E;
+    border: 1px solid #2E2E2E; }
+  .dk-footer-form input::-webkit-input-placeholder, .dk-footer-form input::-moz-placeholder, .dk-footer-form input:-ms-input-placeholder, .dk-footer-form input::-ms-input-placeholder, .dk-footer-form input::-webkit-input-placeholder {
+    color: #878787;
+    font-size: 14px; }
+  .dk-footer-form input::-webkit-input-placeholder, .dk-footer-form input::-moz-placeholder, .dk-footer-form input:-ms-input-placeholder, .dk-footer-form input::-ms-input-placeholder, .dk-footer-form input::placeholder {
+    color: #878787;
+    font-size: 14px; }
+  .dk-footer-form button[type=submit] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 12px 24px 12px 17px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border: 1px solid #007bff;
+    background: #007bff;
+    color: #fff; }
+  .dk-footer-form button:hover {
+    cursor: pointer; }
+
+/* ==========================
+
+    Contact
+
+=============================*/
+.contact-us {
+  position: relative;
+  z-index: 2;
+  margin-top: 65px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.contact-icon {
+  position: absolute; }
+  .contact-icon i {
+    font-size: 36px;
+    top: -5px;
+    position: relative;
+    color: #007bff; }
+
+.contact-info {
+  margin-left: 75px;
+  color: #fff; }
+  .contact-info h3 {
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 0; }
+
+.copyright {
+  padding: 28px 0;
+  margin-top: 55px;
+  background-color: #202020; }
+  .copyright span,
+  .copyright a {
+    color: #878787;
+    -webkit-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear; }
+  .copyright a:hover {
+    color:#007bff; }
+
+.copyright-menu ul {
+  text-align: right;
+  margin: 0; }
+
+.copyright-menu li {
+  display: inline-block;
+  padding-left: 20px; }
+
+.back-to-top {
+  position: relative;
+  z-index: 2; }
+  .back-to-top .btn-dark {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    padding: 0;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #2e2e2e;
+    border-color: #2e2e2e;
+    display: none;
+    z-index: 999;
+    -webkit-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear; }
+    .back-to-top .btn-dark:hover {
+      cursor: pointer;
+      background: #FA6742;
+      border-color: #FA6742; }   
+      
+      .img-fluid {
+       height: 10vh;
+       border-radius: 50%;
+      }
+      
+      
+     /* ul li a{
+       padding: ;
+       background: #222;
+       border-radius: 20%;
+      }*/
+  </style>
+ </head>
+ <body>
+  <div class="bar">
+   
+  </div> 
+  <div id="header">
+    <div class="logos">
+     <div class="logo">
+      
+     </div>
+     <div class="school_name">
+     <center> <img src="https://balbhartischool.edu.in/uploads/school_content/logo/1690288745-90911871164bfc269d2ce2!1689748712-80085122564b784e82fc08!logo-img.png" alt="" style="height :5vh; border:2px solid Transparent ; margin-top: 2vh"/> </center>
+      
+     </div>
+    </div>
+    <div class="tabs">
+     
+     <div>
+      Home
+     </div>
+     <div>
+      Gallery 
+     </div>
+     <div>
+      Achievements 
+     </div>
+     
+     
+     <div>
+      Admission
+     </div>
+     <div>
+      About us
+      
+     </div>
+     
+    </div>
+   </div>
+   <div id="main1">
+    <div class="c1">
+    <!-- <img class="img1" src alt="circle" /> --->
+      <img class="img1 w3-animate-fading" src="https://balbhartischool.edu.in/uploads/gallery/media/1690356613-109573816264c0cb854b0a1!AnnualDay_17563.jpg?1690526747" style="width:100%">
+  <img class="img1 w3-animate-fading" src="https://balbhartischool.edu.in/uploads/gallery/media/1690364002-180696832964c0e862ebfba!AnnualSportsDay_65776.jpg?1690527033" style="width:100%">
+  <img class="img1 w3-animate-fading" src="https://balbhartischool.edu.in/uploads/gallery/media/1690367598-198939438664c0f66e7f472!SpicMacay_49958.jpg?1690527033" style="width:100%">
+  <img class="img1 w3-animate-fading" src="https://balbhartischool.edu.in/uploads/gallery/media/1690430145-58135020664c1eac191272!Tour_59183.jpg?1690527203" style="width:100%">
+ <!-- <img class="img1 w3-animate-fading" src="img_rr_04.jpg" style="width:100%">-->
+</div>
+
+     
+     
+     
+     
+     
+     
+    
+    <div class="c2">
+     <p></p>
+      </div>
+    </div><!--
+  <iframe id="main2" src="flashcard.html">
+   </iframe>--->
+   
+   
+<div id="bg">
+ 
+<div class="container">
+  <div class="box">
+    <span></span>
+    <div class="content">
+      <h2>Card one</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <a href="s">Read More</a>
+    </div>
+  </div>
+  <div class="box">
+    <span></span>
+    <div class="content">
+      <h2>Card two</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <a href="s">Read More</a>
+    </div>
+  </div>
+  <div class="box">
+    <span></span>
+    <div class="content">
+      <h2>Card Three</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <a href="s">Read More</a>
+    </div>
+  </div>
+  <div class="box">
+    <span></span>
+    <div class="content">
+      <h2>Card Four</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <a href="s">Read More</a>
+    </div>
+  </div>
+  <div class="box">
+    <span></span>
+    <div class="content">
+      <h2>Card Five</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <a href="s">Read More</a>
+    </div>
+  </div>
+</div>
+</div>
+   <div id="main3">
+    <div>
+     <div> <img src="1.png" style="filter:drop-shadow(5px 5px 30px #1bd00c); "> </div>
+     <p> <strong>
+      
+     Extra Curricular Activities
+     </strong>
+The students are exposed to different programme, where guest from various fields are invited to the school.</p>
+    </div>
+    <div>
+     <div> <img src="2.png" style="filter:drop-shadow(5px 5px 40px #0cdd8f); "> </div>
+     <p> <strong>
+       Caring for Environment
+     </strong>
+     
+Bal Bharti School was founded in the year 1986 by Mrs. R.W Bakht, wife of a retired I.C.S officer.</p>
+    </div>
+    <div>
+     <div> <img src="3.png" style="filter:drop-shadow(5px 5px 40px #0cd4dd); "> </div>
+     <div class="para">
+      
+      <div>
+       <p>
+        <strong>Academic progress</strong><br>
+We follow Montessori system in primary and NCERT based syllabus in classes VI-VIII. For classes X and XII the school is affliated to CBSE and follow their curriculum.</p>
+      </div>
+     </div>
+    </div>
+    <div id="foot">
+     
+<!-- partial -->
+  
+
+     
+     
+    </div>
+   </div>
+   <div id="main4">
+<footer id="dk-footer" class="dk-footer">
+        <div class="containerf">
+     <div class="row">
+         <div class="col-md-12 col-lg-4">
+      <div class="dk-footer-box-info">
+          <a href="index.html" class="footer-logo">
+       <img src="restoration_photo_bot(1).png" alt="footer_logo" class="img-fluid">
+          </a>
+          <p class="footer-info-text">
+      blh loremnon deserunt ex eu id irure sint cupidatat ad proidentminim proident cillum fugiat cupidatat eu exercitation laborum tempor pariatur labore officia fugiat duis anim cupidatat non eu aliquip dolore est id occaecat dolor sint eu officia dolore ex ipsum
+          </p>
+          <div class="footer-social-link">
+       <h3>Follow us</h3>
+       <ul>
+           <li>
+ <a href="#">
+     
+ </a>
+           </li>
+           <li>
+ <a href="#">
+     <i class="fa fa-twitter"></i>
+ </a>
+           </li>
+           <li>
+ <a href="#">
+     <i class="fa fa-google-plus"></i>
+ </a>
+           </li>
+           <li>
+ <a href="#">
+     <i class="fa fa-linkedin"></i>
+ </a>
+           </li>
+           <li>
+ <a href="#">
+     <i class="fa fa-instagram"></i>
+ </a>
+           </li>
+       </ul>
+          </div>
+          <!-- End Social link -->
+      </div>
+      <!-- End Footer info -->
+      <div class="footer-awarad">
+          <img src="images/icon/best.png" alt="">
+          <p>The Best School of Prayagraj</p>
+      </div>
+         </div>
+         <!-- End Col -->
+         <div class="col-md-12 col-lg-8">
+      <div class="row">
+          <div class="col-md-6">
+       <div class="contact-us">
+           <div class="contact-icon">
+ <i class="fa fa-map-o" aria-hidden="true"></i>
+           </div>
+           <!-- End contact Icon -->
+           <div class="contact-info">
+ <h3>Civil lines, Prayagraj</h3>
+ <p>14,Kamla Nehru Road</p>
+           </div>
+           <!-- End Contact Info -->
+       </div>
+       <!-- End Contact Us -->
+          </div>
+          <!-- End Col -->
+          <div class="col-md-6">
+       <div class="contact-us contact-us-last">
+           <div class="contact-icon">
+ <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+           </div>
+           
+           <div class="contact-info">
+ <h3>9899××××××</h3>
+ <p>Give us a call</p>
+           </div>
+           
+       </div>
+       
+          </div>
+          
+      </div>
+      
+      <div class="row">
+          <div class="col-md-12 col-lg-6">
+       <div class="footer-widget footer-left-widget">
+           <div class="section-heading">
+ <h3>Useful Links</h3>
+ <span class="animate-border border-black"></span>
+           </div>
+           <ul>
+ <li>
+     <a href="#">About us</a>
+ </li>
+ <li>
+     <a href="#">Services</a>
+ </li>
+ <li>
+     <a href="#">Projects</a>
+ </li>
+ <li>
+     <a href="#">Our Team</a>
+ </li>
+           </ul>
+           <ul>
+ <li>
+     <a href="#">Contact us</a>
+ </li>
+ <li>
+     <a href="#">Blog</a>
+ </li>
+ <li>
+     <a href="#">Testimonials</a>
+ </li>
+ <li>
+     <a href="#">Faq</a>
+ </li>
+           </ul>
+       </div>
+       <!-- End Footer Widget -->
+          </div>
+          <!-- End col -->
+          <div class="col-md-12 col-lg-6">
+       <div class="footer-widget">
+           <div class="section-heading">
+ <h3>Subscribe</h3>
+ <span class="animate-border border-black"></span>
+           </div>
+           <p>
+           (Reference site) consectetur deserunt duis nulla nulla laborum culpa est amet velit cillum amet do ea consectetur labore aliqua consectetur adipisicing amet</p>
+           <form action="#">
+ <div class="form-row">
+     <div class="col dk-footer-form">
+  <input type="email" class="form-control" placeholder="Email Address">
+  <button type="submit">
+      <i class="fa fa-send"></i>
+  </button>
+     </div>
+ </div>
+           </form>
+           <!-- End form -->
+       </div>
+       <!-- End footer widget -->
+          </div>
+          <!-- End Col -->
+      </div>
+      <!-- End Row -->
+         </div>
+         <!-- End Col -->
+     </div>
+     <!-- End Widget Row -->
+        </div>
+        <!-- End Contact Container -->
+
+
+        <div class="copyright">
+     <div class="container">
+         <div class="row">
+      <div class="col-md-6">
+          <span>Copyright © 2023, All Right Reserved. 
+          _From Kriyansh Sinha </span>
+      </div>
+      <!-- End Col -->
+      <div class="col-md-6">
+          <div class="copyright-menu">
+       <ul>
+           <li>
+ <a href="#">Home</a>
+           </li>
+           <li>
+ <a href="#">Terms</a>
+           </li>
+           <li>
+ <a href="#">Privacy Policy</a>
+           </li>
+           <li>
+ <a href="#">Contact</a>
+           </li>
+       </ul>
+          </div>
+      </div>
+      <!-- End col -->
+         </div>
+         <!-- End Row -->
+     </div>
+     <!-- End Copyright Container -->
+        </div>
+        <!-- End Copyright -->
+     <!-- Back to top -->     <div id="back-to-top" class="back-to-top">
+      <a href="#">
+        <button class="btn btn-dark" titl="Back to Top" style="display: block;">
+       
+   <i class="fa fa-angle-up"></i>
+    </button>
+      </a>
+ </div>
+ <!-- End Back to top -->
+</footer>
+    
+   </div>
+<script>
+
+var K_S = 0;
+var Kriyansh = "Owner";
+carousel();
+
+  var Owner ="Kriyansh_Sinha"
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("img1");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  var owner ="Kriyansh"
+  K_S++;
+  if (K_S > x.length) {K_S = 1}    
+  x[K_S-1].style.display = "block";  
+  setTimeout(carousel, 4500);   
+}
+</script>
+
+<script>
+ 
+window.addEventListener('scroll', () => {
+  document.body.style.setProperty('--scroll',window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
+}, false);
+var owner = "K_S"
+</script>
+ </body>
+ 
+
+</html>
